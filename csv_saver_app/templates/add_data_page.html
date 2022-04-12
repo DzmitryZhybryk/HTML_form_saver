@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h0>
+        <body class="text-center">
+
+        <div class="container mt-5">
+            <h0 class="h3 mb-3 fw-normal">Добавьте данные для записи</h0>
+            <form method="post">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Название" required
+                       minlength="3" maxlength="120"
+                       oninvalid="this.setCustomValidity('Поле обязательно для заполнения! Может иметь длину от 3 до 120 символов')"
+                       oninput="this.setCustomValidity('')"/>
+                <input type="number" class="form-control" name="weight" id="weight" placeholder="Вес" min="1" max="500"
+                       step="1"
+                       oninvalid="this.setCustomValidity('Значение должно быть от 0 до 500')"
+                       oninput="this.setCustomValidity('')"/>
+                <input type="text" class="form-control" name="color" id="color"
+                       placeholder="Цвет: красный, зелёный или синий" required
+                       list="defaultNumbers" pattern="[Кк]расный|[Зз]елёный|[Сс]иний"
+                       oninvalid="this.setCustomValidity('Поле обязательно для заполнения! Цвет может быть синим, зелёным или красным')"
+                       oninput="this.setCustomValidity('')"/>
+                <span class="validity"></span>
+                <datalist id="defaultNumbers">
+                    <option value="красный">
+                    <option value="зелёный">
+                    <option value="синий">
+                </datalist>
+                <label for="name">Нажмите "Сохранить" для записи данных</label>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Сохранить</button>
+            </form>
+        </div>
+
+        <div class="checkbox mb-3">
+        </div>
+        </footer>
+        </main>
+        </body>
+    </h0>
+</div>
+{% endblock %}

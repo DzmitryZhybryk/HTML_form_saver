@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Страница про нас
+{% endblock %}
+
+{% block body %}
+<div class="container" style="text-align:center">
+    <main class="px-3">
+        <h0>
+            <center>Добавлена запись ID={{ value }}</center>
+        </h0>
+        <h0>
+            <center>Для ввода новых данных нажмите кнопку ниже</center>
+        </h0>
+        <a href="/add_data" class="btn btn-lg btn-secondary fw-bold border-black bg-black">
+            <center>Добавить данные</center>
+        </a>
+    </main>
+</div>
+{% endblock %}
+

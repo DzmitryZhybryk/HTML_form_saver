@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  storage:
+    networks:
+      front:
+        ipv4_address: 172.16.238.5
+    build: csv_storage_app
+    container_name: csv_storage_app
+    volumes:
+      - ./sql_data:/var/lib/sqlite/data/sqldata
+    ports:
+      - "5001:5001"
+    restart: always
+
+  app:
+    networks:
+      front:
+        ipv4_address: 172.16.238.10
+    build: csv_saver_app
+    container_name: csv_saver_app
+    ports:
+      - "5000:5000"
+
+networks:
+  front:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.16.238.0/24
